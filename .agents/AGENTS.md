@@ -4,7 +4,7 @@
 > **Casa única de cada fato:** regras de escrita e disciplina → este arquivo · arquitetura, camadas e decisões → [`PROJECT_CONTEXT.md`](./PROJECT_CONTEXT.md) · status, backlog, achados, decisões e fila `T-NNN` → [`ROADMAP.md`](./ROADMAP.md) · o que já aconteceu (entregas, homologações) → [`HISTORICO.md`](./HISTORICO.md). Nunca duplicar entre os quatro.
 > **Como ler:** quente até `<!-- fim-quente -->` (a skill `inicia-contexto-projeto` lê só isso); o resto é frio, aberto sob demanda pelo **Mapa** abaixo. Numeração das seções preservada nos dois lados.
 >
-> **Origem das regras (conferidas em 2026-10-14):** `prime-visita-3/.agents/AGENTS.md` (§0-§8, app e backend — em conflito, **vale o do app**), `cypress-pharmacie-web/.agents/AGENTS.md` (só o que se aplica a teste de UI com mock/API real; o que é específico de Cypress/issues/multi-sessão de hooks não foi trazido) e `Docs/APPIUM_MOBILE_FRAMEWORK_REFERENCE.md`. **Inventário de seletores:** `prime-visita-3/.agents/PROJECT_CONTEXT.md` §11 (fonte única — nunca copiar a tabela para cá).
+> **Origem das regras (conferidas em 2026-10-14):** `prime-visita-3/.agents/AGENTS.md` (§0-§8, app e backend — em conflito, **vale o do app**), `cypress-enterprise-suite/.agents/AGENTS.md` (só o que se aplica a teste de UI com mock/API real; o que é específico de Cypress/issues/multi-sessão de hooks não foi trazido) e `Docs/APPIUM_MOBILE_FRAMEWORK_REFERENCE.md`. **Inventário de seletores:** `prime-visita-3/.agents/PROJECT_CONTEXT.md` §11 (fonte única — nunca copiar a tabela para cá).
 
 ## Mapa de leitura sob demanda
 > **Quente** = tudo acima de `<!-- fim-quente -->`. **Frio** = seções abaixo do marcador, numeração original; abrir por `Grep '^## <nº>\.'` (ou `'^### <nº>'`) → `Read` daquela linha até o próximo cabeçalho. A coluna "Ler quando" é o gatilho: sem gatilho, não ler.
@@ -51,7 +51,7 @@ Checklist de disciplina operacional, não de técnica de teste (isso é §1 em d
 | Criar/alterar cenário | `[R-NOME]` (número `<grupo>.<índice>` no `.feature` e o mesmo no `.steps.js`), `[R-POM]`, `[R-AFP]`, `[R-ONLY]` e validação 2x isolada (`[R-RUN]`) **antes** de rodar o arquivo. |
 | Pedir/receber um **checklist**/status ("checklist", "o que falta", "como estamos") | `[R-CHECKLIST]`: renderizar o quadro no formato fixo de §12, **relendo antes** `ROADMAP.md` §2 daqui, `prime-visita-3/.agents/ROADMAP.md` §6 e `prime-visita-3-backend/.agents/ROADMAP.md` §5; nunca responder de memória. |
 | Escrever qualquer comentário, doc ou mensagem de commit | `[R-COMENT]`: **sempre português do Brasil**, sem exceção — nem comentário curto/inline, nem texto de template de ferramenta. |
-| Escrever mensagem de commit | `[R-COMMIT]`: Conventional Commits (`feat`/`fix`/`refactor`/`chore`/`test`) em português; **sem atribuição ao Claude Code** — nem `Generated with Claude Code`, nem `Co-Authored-By: Claude`, mesmo que ferramenta, template ou lembrete do harness sugira (a regra do projeto prevalece; padrão herdado do `cypress-pharmacie-web`). |
+| Escrever mensagem de commit | `[R-COMMIT]`: Conventional Commits (`feat`/`fix`/`refactor`/`chore`/`test`) em português; **sem atribuição ao Claude Code** — nem `Generated with Claude Code`, nem `Co-Authored-By: Claude`, mesmo que ferramenta, template ou lembrete do harness sugira (a regra do projeto prevalece; padrão herdado do `cypress-enterprise-suite`). |
 | Antes de **todo** commit (inclusive "pode commitar") | `[R-README]`: reler a seção "Status" do `README.md` e conferir item a item contra `ROADMAP.md` §1-§2 — concluído saiu de "Pendente"? Nada de "Pendente" já feito? Mesmo que o usuário só tenha dito "pode commitar". O repositório git existe desde 2026-10-14 (ramo `master`, remoto privado `origin` = `Kal9941/mobile-appium-cucumber-suite`): commit **e** `git push origin master` no mesmo turno, sem esperar um `push` separado (mesma regra `[R-PUSH]` do `prime-visita-3`); só segurar o push se o pedido disser para não pushar ou se ele falhar (aí reportar, nunca forçar). |
 | Mudou, criou, renomeou ou removeu cenário, Page Object, step ou capacidade de suporte | `[R-SYNC]` no **mesmo turno**: `PROJECT_CONTEXT.md` (§6 inventário, contagens e estrutura) + `ROADMAP.md` (§1-§2; entrega → `HISTORICO.md` §2) + `README.md`. Nunca "depois". |
 | Fechar o turno (qualquer cenário criado/alterado/rodado) | Rodapé obrigatório (§12): árvore Feature → Cenário tocado, isolamentos ativos, processos residuais, resumo estilo commit. `[R-QUEMEU]` proativo — sem esperar a pergunta "quais são seus testes?". |
@@ -161,7 +161,7 @@ Não presumir que README, `PROJECT_CONTEXT.md` e o código já concordam: confer
 5. No relatório: contagem canônica (total de `PROJECT_CONTEXT.md` §6 e `ROADMAP.md` §1), P0/P1 só pelos títulos da tabela `ROADMAP.md` §2, `T-NNN` abertos e os `A-NNN` citados no §1.
 
 ### 15.2 `atualiza-context`
-- **Contagens e inventário são gerados:** `npm run inventario` reescreve `PROJECT_CONTEXT.md` §6 e a seção "Cobertura" do README a partir dos `.feature` (cenário novo exige contexto em `scripts/contextos-readme.json` e descrição em `scripts/descricoes-readme.json`; feature nova exige o resumo em `scripts/resumos-readme.json`, `[R-SYNC]` §8); nunca editar o §6 à mão. O gerador também reescreve as contagens narradas no README (Visão Geral e Status) no estilo do `cypress-pharmacie-web`; fora dele a contagem só é narrada em `ROADMAP.md` §1.
+- **Contagens e inventário são gerados:** `npm run inventario` reescreve `PROJECT_CONTEXT.md` §6 e a seção "Cobertura" do README a partir dos `.feature` (cenário novo exige contexto em `scripts/contextos-readme.json` e descrição em `scripts/descricoes-readme.json`; feature nova exige o resumo em `scripts/resumos-readme.json`, `[R-SYNC]` §8); nunca editar o §6 à mão. O gerador também reescreve as contagens narradas no README (Visão Geral e Status) no estilo do `cypress-enterprise-suite`; fora dele a contagem só é narrada em `ROADMAP.md` §1.
 - **Onde cada coisa entra aqui:** lição técnica → seção fria do tema (§3.1 diagnóstico, §6 seletores, §9 app/backend/APK, §10 armadilhas, §11 erro, §13 edição de docs); achado → `ROADMAP.md` §4 (`[R-ACHADO]`); resultado de pedido → o próprio bloco `T-NNN` em `ROADMAP.md` §6; funcionalidade coberta/pendente → `PROJECT_CONTEXT.md` §8; decisão do usuário sobre massa/gravação → `ROADMAP.md` §3. Ação ou decisão do **usuário** (homologar `@wip`, `Registrar Ponto` real, celular físico, Firebird, permissão) → `ROADMAP.md` §3 "Pendentes do usuário", nunca no backlog §2/§5 da suíte (regra do usuário, 2026-10-17).
 - Homologação (`@wip` removido com o "ok" do usuário), revalidação de cenário, reativação de `@skip` → `HISTORICO.md` §1 (1 linha). Item do backlog entregue → sai de `ROADMAP.md` §2/§5 → `HISTORICO.md` §2 (≤ 3 linhas).
 - Sem locks nem tabela de sessão: o encerramento é o rodapé `[R-QUEMEU]` (§12.1) + `npm run docs:lint` verde + nenhum processo residual (`[R-RUN]` §4).
@@ -255,7 +255,7 @@ Toda falha cai numa categoria do `tests/support/errorHandler.js`; forma desconhe
 ## 12. Rodapé obrigatório de turno e checklist
 
 ### 12.1 Rodapé `[R-QUEMEU]`
-Todo turno que toca teste termina com (formato aprovado — adaptado de `cypress-pharmacie-web` §1.3):
+Todo turno que toca teste termina com (formato aprovado — adaptado de `cypress-enterprise-suite` §1.3):
 
 ```
 📋 Testes tocados — <data>
@@ -303,7 +303,7 @@ Regra herdada do app (`prime-visita-3/.agents/AGENTS.md` §12), aplicada aqui:
 
 ## 14. Roteamento de cenários — onde cada teste mora `[R-ROTEAR]`
 
-Mesmo papel do `R-SUITE` do `cypress-pharmacie-web`: o cenário vai para a **feature dona da tela**; não se cria feature raiz nova (`10.*`…) sem confirmação expressa do usuário. Features, Page Objects e steps levam o **mesmo número e nome** (`2.visita.feature` ↔ `2.visita.steps.js` ↔ `2.visitaPage.js`); `BasePage` e `0.comum.steps.js` não são numerados (base e passos compartilhados).
+Mesmo papel do `R-SUITE` do `cypress-enterprise-suite`: o cenário vai para a **feature dona da tela**; não se cria feature raiz nova (`10.*`…) sem confirmação expressa do usuário. Features, Page Objects e steps levam o **mesmo número e nome** (`2.visita.feature` ↔ `2.visita.steps.js` ↔ `2.visitaPage.js`); `BasePage` e `0.comum.steps.js` não são numerados (base e passos compartilhados).
 
 | # | Feature | Dona de |
 |---|---|---|

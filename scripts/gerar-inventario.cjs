@@ -38,7 +38,7 @@ for (const arq of arquivos) {
 
 const secao = `## 6. Inventário canônico de cenários \`[R-SYNC]\`
 
-> **Gerado por \`node scripts/gerar-inventario.cjs\` a partir de \`tests/features/*.feature\`** — nunca editar à mão (a próxima execução do gerador sobrescreve). Como usar (padrão do \`cypress-pharmacie-web\`, §10): \`grep\` por tela, tag do app, rota, nome ou \`#<grupo>.<índice>\`; \`L:\` é a linha real do \`Cenário:\` no arquivo. Usar **antes de criar teste** (duplicidade), **ao receber pedido do app** (qual cenário já cobre / onde entra o novo — \`AGENTS.md\` §14), ao investigar falha. Tags do app: \`prime-visita-3/.agents/PROJECT_CONTEXT.md\` §11. \`@wip\` = aguarda homologação do usuário (\`R-ONLY\`); \`@leitura\` = reinício leve (sessão mantida); \`@offline\`/\`@relogio\`/\`@redeLenta\` = o \`afterScenario\` devolve rede/relógio/velocidade; \`@visual\` = quadro por passo.
+> **Gerado por \`node scripts/gerar-inventario.cjs\` a partir de \`tests/features/*.feature\`** — nunca editar à mão (a próxima execução do gerador sobrescreve). Como usar (padrão do \`cypress-enterprise-suite\`, §10): \`grep\` por tela, tag do app, rota, nome ou \`#<grupo>.<índice>\`; \`L:\` é a linha real do \`Cenário:\` no arquivo. Usar **antes de criar teste** (duplicidade), **ao receber pedido do app** (qual cenário já cobre / onde entra o novo — \`AGENTS.md\` §14), ao investigar falha. Tags do app: \`prime-visita-3/.agents/PROJECT_CONTEXT.md\` §11. \`@wip\` = aguarda homologação do usuário (\`R-ONLY\`); \`@leitura\` = reinício leve (sessão mantida); \`@offline\`/\`@relogio\`/\`@redeLenta\` = o \`afterScenario\` devolve rede/relógio/velocidade; \`@visual\` = quadro por passo.
 
 **Total: ${total} cenários estáticos em ${arquivos.length} features** (\`R-CONTA\`: \`Esquema do Cenário\` conta 1; as linhas de \`Exemplos\` não).
 
@@ -56,7 +56,7 @@ const ini = ctx.indexOf('## 6. Inventário canônico de cenários')
 const fim = ctx.indexOf('## 7. Categorias do classificador de erro')
 if (ini < 0 || fim < 0) throw new Error('seções §6/§7 não encontradas em PROJECT_CONTEXT.md')
 fs.writeFileSync(arqCtx, `${ctx.slice(0, ini)}${secao}\n${ctx.slice(fim)}`)
-// ---- Cobertura do README (padrão do cypress-pharmacie-web): suíte → contextos temáticos → cenário com título e
+// ---- Cobertura do README (padrão do cypress-enterprise-suite): suíte → contextos temáticos → cenário com título e
 // descrição, em `<details>` recolhíveis. Atemporal, sem resultado de rodada (✅/❌): é inventário de cobertura, não relatório.
 // Os contextos vêm de `scripts/contextos-readme.json` (grupos de cenários por tema) e a descrição de cada cenário de
 // `scripts/descricoes-readme.json` (escrita à mão, como no Cypress); cenário sem contexto ou sem descrição é erro, para

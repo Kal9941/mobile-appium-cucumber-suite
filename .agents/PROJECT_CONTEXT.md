@@ -84,7 +84,7 @@ env.json / env.local.json  caminhos/ids (versionado) / credenciais (gitignorado)
 
 ## 6. Inventário canônico de cenários `[R-SYNC]`
 
-> **Gerado por `node scripts/gerar-inventario.cjs` a partir de `tests/features/*.feature`** — nunca editar à mão (a próxima execução do gerador sobrescreve). Como usar (padrão do `cypress-pharmacie-web`, §10): `grep` por tela, tag do app, rota, nome ou `#<grupo>.<índice>`; `L:` é a linha real do `Cenário:` no arquivo. Usar **antes de criar teste** (duplicidade), **ao receber pedido do app** (qual cenário já cobre / onde entra o novo — `AGENTS.md` §14), ao investigar falha. Tags do app: `prime-visita-3/.agents/PROJECT_CONTEXT.md` §11. `@wip` = aguarda homologação do usuário (`R-ONLY`); `@leitura` = reinício leve (sessão mantida); `@offline`/`@relogio`/`@redeLenta` = o `afterScenario` devolve rede/relógio/velocidade; `@visual` = quadro por passo.
+> **Gerado por `node scripts/gerar-inventario.cjs` a partir de `tests/features/*.feature`** — nunca editar à mão (a próxima execução do gerador sobrescreve). Como usar (padrão do `cypress-enterprise-suite`, §10): `grep` por tela, tag do app, rota, nome ou `#<grupo>.<índice>`; `L:` é a linha real do `Cenário:` no arquivo. Usar **antes de criar teste** (duplicidade), **ao receber pedido do app** (qual cenário já cobre / onde entra o novo — `AGENTS.md` §14), ao investigar falha. Tags do app: `prime-visita-3/.agents/PROJECT_CONTEXT.md` §11. `@wip` = aguarda homologação do usuário (`R-ONLY`); `@leitura` = reinício leve (sessão mantida); `@offline`/`@relogio`/`@redeLenta` = o `afterScenario` devolve rede/relógio/velocidade; `@visual` = quadro por passo.
 
 **Total: 198 cenários estáticos em 9 features** (`R-CONTA`: `Esquema do Cenário` conta 1; as linhas de `Exemplos` não).
 

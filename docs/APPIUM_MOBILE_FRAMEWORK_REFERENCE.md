@@ -1,7 +1,7 @@
 # Arquitetura e Padrões de Qualidade — Referência para Framework Appium (Apps Mobile Android/iOS)
 
 > **Objetivo:** extrair a arquitetura e os padrões de qualidade já validados em produção neste
-> repositório (`appium-pharmacie-desktop`, Appium + driver `windows` para app desktop Delphi/VCL)
+> repositório (`desktop-appium-delphi-suite`, Appium + driver `windows` para app desktop Delphi/VCL)
 > e traduzi-los para um novo framework de testes automatizados com **Appium** mirando
 > **aplicações mobile** (Android via `uiautomator2`, iOS via `xcuitest`). Não é um guia de uso do
 > Appium — é um mapa de decisões já tomadas e implementadas aqui (não só planejadas), com o
@@ -36,7 +36,7 @@
 
 ### 1.1 Estrutura de diretórios
 ```text
-appium-pharmacie-desktop/
+desktop-appium-delphi-suite/
 ├── .agents/               # AGENTS.md (regras de escrita) + PROJECT_CONTEXT.md (arquitetura/inventário) + ROADMAP.md (status/backlog)
 ├── tests/
 │   ├── features/          # .feature por domínio, numerados (<grupo>.<índice>), Gherkin em pt-BR

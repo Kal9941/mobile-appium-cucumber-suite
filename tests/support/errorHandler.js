@@ -1,6 +1,6 @@
 // Classificador de erro — categoriza toda falha em causas conhecidas para que
 // o relatório cite a categoria, nunca "parece que o seletor está errado".
-// Portado de appium-pharmacie-desktop/tests/support/errorHandler.js, com o
+// Portado de desktop-appium-delphi-suite/tests/support/errorHandler.js, com o
 // vocabulário trocado para Appium Mobile (uiautomator2) — ver
 // Docs/APPIUM_MOBILE_FRAMEWORK_REFERENCE.md §3.
 import {
