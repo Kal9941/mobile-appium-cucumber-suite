@@ -1,0 +1,7 @@
+node_modules/
+tests/reports/
+.claude/
+*.log
+env.local.json
+*.apk
+tools/

@@ -1,0 +1,33 @@
+{
+  "name": "mobile-appium-cucumber-suite",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Enterprise Mobile QA Suite (Android, Appium 3.8, UiAutomator2, WebdriverIO 10, Cucumber BDD) with AI Agent Governance",
+  "scripts": {
+    "test": "wdio run wdio.android.conf.js",
+    "test:spec": "wdio run wdio.android.conf.js --spec",
+    "driver:install": "appium driver install uiautomator2",
+    "report:allure:generate": "allure generate tests/reports/allure-results --output tests/reports/allure-report",
+    "report:allure:open": "allure open tests/reports/allure-report",
+    "report:html": "node scripts/generateHtmlReport.mjs",
+    "inventario": "node scripts/gerar-inventario.cjs",
+    "docs:lint": "node scripts/lint-agents.cjs"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.2.1",
+    "@wdio/allure-reporter": "^10.0.1",
+    "@wdio/appium-service": "^10.0.1",
+    "@wdio/cli": "^10.0.1",
+    "@wdio/cucumber-framework": "^10.0.1",
+    "@wdio/json-reporter": "^10.0.1",
+    "@wdio/local-runner": "^10.0.1",
+    "@wdio/spec-reporter": "^10.0.1",
+    "allure-commandline": "^2.46.1",
+    "appium": "^3.8.0",
+    "appium-uiautomator2-driver": "^8.7.0",
+    "expect-webdriverio": "^8.0.0-alpha.3",
+    "glob": "^10.5.0",
+    "multiple-cucumber-html-reporter": "^4.4.2",
+    "webdriverio": "^10.0.1"
+  }
+}

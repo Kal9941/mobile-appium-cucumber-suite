@@ -1,0 +1,11 @@
+{
+  "1": "tela de login: autenticação e logout, teclado, máscaras e validações do formulário, sessão persistente (com e sem rede), teste grátis (só o formulário), olhinho da senha, acessibilidade e troca de usuário no mesmo aparelho.",
+  "2": "agenda de Visitas: abas e ordenação, nova visita (Iniciar e Agendar), detalhe e pop-ups, seletores de prescritor e local, nomes nos cartões, virada do dia, sincronização, intervalo mínimo de 10 minutos entre visitas (online, offline e o `409` do servidor) e visita criada por fora.",
+  "3": "Relatórios: totais por prescritor e por especialidade, ordenação e período, gráficos mensais, seletor de visão e Minha semana (lista preguiçosa, follow-ups, calendário) com o aviso offline.",
+  "4": "Chat: lista e busca de contatos, conversa e teclado, disponibilidade (chave e bolinha), chave em segundos num app recém-limpo e aviso offline.",
+  "5": "Registro de Ponto: ordem dos botões, linhas previstas e registradas, horário esperado (inclusive o dia sem almoço), relógio e aviso offline — sem bater ponto real.",
+  "6": "Prescritores: lista, busca, filtros e vínculos (vincular e desvincular pela lista), formulário, detalhe com Locais e Secretárias, nome próprio e a lista que não some enquanto se digita na busca.",
+  "7": "Secretárias: lista, filtros Minhas e Todas, formulário, vínculos e aviso offline.",
+  "8": "Locais de atendimento: lista, busca, filtros Meus e Todos, formulário com CEP, vínculos e aviso offline.",
+  "9": "casca do app e telas de apoio: barra inferior (abas com cópia em RAM, repouso e offline), menu lateral, Aniversários, Configurações, Notificações, Sobre, Ajuda, Pendências de envio e o controle de que o aviso offline não aparece com rede."
+}
