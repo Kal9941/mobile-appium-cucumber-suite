@@ -66,7 +66,7 @@ Funcionalidade: Secretárias
     Quando acesso Secretárias pelo menu lateral
     E toco no botão + de Secretárias
     E abro a aba Contato do formulário de secretária
-    E digito "62993225337" no telefone 1 da secretária
+    E digito "11999998888" no telefone 1 da secretária
     Então o telefone 1 da secretária mostra "(62) 9 9322-5337"
 
   @wip @leitura

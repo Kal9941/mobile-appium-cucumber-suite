@@ -130,7 +130,7 @@ Funcionalidade: Prescritores
     Quando acesso Prescritores pela barra inferior
     E toco no botão + de Prescritores
     E abro a aba Contato do formulário de prescritor
-    E digito "62993225337" no telefone 1 do prescritor
+    E digito "11999998888" no telefone 1 do prescritor
     Então o telefone 1 do prescritor mostra "(62) 9 9322-5337"
 
   # T-013 — CEP preenche endereço/bairro (ViaCEP, dado público) sem gravar nada.
